@@ -25,6 +25,9 @@ public class SignupPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
+        jRadioButtonMenuItem2 = new javax.swing.JRadioButtonMenuItem();
+        jRadioButtonMenuItem3 = new javax.swing.JRadioButtonMenuItem();
         loginButton = new javax.swing.JButton();
         usernameTextField = new javax.swing.JTextField();
         passwordTextField = new javax.swing.JTextField();
@@ -50,8 +53,23 @@ public class SignupPage extends javax.swing.JFrame {
         jCheckBox2 = new javax.swing.JCheckBox();
         jCheckBox4 = new javax.swing.JCheckBox();
         jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu6 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
+        jMenu9 = new javax.swing.JMenu();
+
+        jRadioButtonMenuItem1.setSelected(true);
+        jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
+
+        jRadioButtonMenuItem2.setSelected(true);
+        jRadioButtonMenuItem2.setText("jRadioButtonMenuItem2");
+
+        jRadioButtonMenuItem3.setSelected(true);
+        jRadioButtonMenuItem3.setText("jRadioButtonMenuItem3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -92,6 +110,7 @@ public class SignupPage extends javax.swing.JFrame {
         emailTextField.setBackground(new java.awt.Color(240, 238, 238));
         emailTextField.setText("Type Here");
 
+        jButton3.setBackground(new java.awt.Color(1, 80, 115));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(216, 250, 173));
         jButton3.setText("Sign Up");
@@ -163,11 +182,37 @@ public class SignupPage extends javax.swing.JFrame {
         jMenuBar1.setBackground(new java.awt.Color(1, 80, 115));
         jMenuBar1.setForeground(new java.awt.Color(1, 80, 115));
 
-        jMenu1.setText("File");
+        jMenu6.setBackground(new java.awt.Color(1, 80, 115));
+        jMenu6.setText("PRINCIPAL");
+        jMenuBar1.add(jMenu6);
+
+        jMenu7.setBackground(new java.awt.Color(1, 80, 115));
+        jMenu7.setText("      Categories      ");
+        jMenuBar1.add(jMenu7);
+
+        jMenu3.setBackground(new java.awt.Color(1, 80, 115));
+        jMenu3.setText(" Subscription   ");
+        jMenuBar1.add(jMenu3);
+
+        jMenu4.setBackground(new java.awt.Color(1, 80, 115));
+        jMenu4.setForeground(new java.awt.Color(1, 80, 115));
+        jMenu4.setText("                                                         ");
+        jMenuBar1.add(jMenu4);
+
+        jMenu8.setBackground(new java.awt.Color(1, 80, 115));
+        jMenu8.setText("Language");
+        jMenuBar1.add(jMenu8);
+
+        jMenu1.setBackground(new java.awt.Color(1, 80, 115));
+        jMenu1.setText("    Cart");
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
+        jMenu2.setBackground(new java.awt.Color(1, 80, 115));
+        jMenu2.setText("          Login");
         jMenuBar1.add(jMenu2);
+
+        jMenu9.setText("            Help");
+        jMenuBar1.add(jMenu9);
 
         setJMenuBar(jMenuBar1);
 
@@ -357,7 +402,16 @@ public class SignupPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
