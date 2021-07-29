@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -27,12 +30,12 @@ public class SignupPage extends javax.swing.JFrame {
 
         loginButton = new javax.swing.JButton();
         usernameTextField = new javax.swing.JTextField();
-        passwordTextField = new javax.swing.JTextField();
+        emailTextField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         signupButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        emailTextField = new javax.swing.JTextField();
+        passwordTextField = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -46,12 +49,18 @@ public class SignupPage extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         locationBox = new javax.swing.JComboBox<>();
         genderBox = new javax.swing.JComboBox<>();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        termsCheckBox = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
         jCheckBox4 = new javax.swing.JCheckBox();
         jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu6 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
+        jMenu9 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -66,9 +75,19 @@ public class SignupPage extends javax.swing.JFrame {
 
         usernameTextField.setBackground(new java.awt.Color(240, 238, 238));
         usernameTextField.setText("Type Here");
+        usernameTextField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                usernameTextFieldMouseClicked(evt);
+            }
+        });
 
-        passwordTextField.setBackground(new java.awt.Color(240, 238, 238));
-        passwordTextField.setText("Type Here");
+        emailTextField.setBackground(new java.awt.Color(240, 238, 238));
+        emailTextField.setText("Type Here");
+        emailTextField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                emailTextFieldMouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Username");
@@ -89,17 +108,18 @@ public class SignupPage extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Email");
 
-        emailTextField.setBackground(new java.awt.Color(240, 238, 238));
-        emailTextField.setText("Type Here");
+        passwordTextField.setBackground(new java.awt.Color(240, 238, 238));
+        passwordTextField.setText("Type Here");
+        passwordTextField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                passwordTextFieldMouseClicked(evt);
+            }
+        });
 
+        jButton3.setBackground(new java.awt.Color(1, 80, 115));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(216, 250, 173));
         jButton3.setText("Sign Up");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("First name");
@@ -109,17 +129,17 @@ public class SignupPage extends javax.swing.JFrame {
 
         firstNameTextField.setBackground(new java.awt.Color(240, 238, 238));
         firstNameTextField.setText("Type Here");
-        firstNameTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                firstNameTextFieldActionPerformed(evt);
+        firstNameTextField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                firstNameTextFieldMouseClicked(evt);
             }
         });
 
         lastNameTextField.setBackground(new java.awt.Color(240, 238, 238));
         lastNameTextField.setText("Type Here");
-        lastNameTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lastNameTextFieldActionPerformed(evt);
+        lastNameTextField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lastNameTextFieldMouseClicked(evt);
             }
         });
 
@@ -128,6 +148,11 @@ public class SignupPage extends javax.swing.JFrame {
 
         rePasswordTextField.setBackground(new java.awt.Color(240, 238, 238));
         rePasswordTextField.setText("Type Here");
+        rePasswordTextField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rePasswordTextFieldMouseClicked(evt);
+            }
+        });
 
         birthYearBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964" }));
 
@@ -140,39 +165,50 @@ public class SignupPage extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel9.setText("Gender");
 
-        locationBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Brasov", "Bucuresti", "Cluj-Napoca", "Sibiu", "Targu-Mures" }));
-        locationBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                locationBoxActionPerformed(evt);
-            }
-        });
+        locationBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Romania", "United Kingdom", "Rusia", "USA", "Germany", "Canada" }));
 
-        genderBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculin", "Feminin" }));
+        genderBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
 
-        jCheckBox1.setText("I agree to Terms & Conditions");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
+        termsCheckBox.setText("I agree to Terms & Conditions");
 
         jCheckBox2.setText("I agree to my personal data being stored for marketing purposes");
 
         jCheckBox4.setText("I would like to receive regular email from TMS regarding offers");
-        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox4ActionPerformed(evt);
-            }
-        });
 
         jMenuBar1.setBackground(new java.awt.Color(1, 80, 115));
         jMenuBar1.setForeground(new java.awt.Color(1, 80, 115));
 
-        jMenu1.setText("File");
+        jMenu6.setBackground(new java.awt.Color(1, 80, 115));
+        jMenu6.setText("PRINCIPAL");
+        jMenuBar1.add(jMenu6);
+
+        jMenu7.setBackground(new java.awt.Color(1, 80, 115));
+        jMenu7.setText("      Categories      ");
+        jMenuBar1.add(jMenu7);
+
+        jMenu3.setBackground(new java.awt.Color(1, 80, 115));
+        jMenu3.setText(" Subscription   ");
+        jMenuBar1.add(jMenu3);
+
+        jMenu4.setBackground(new java.awt.Color(1, 80, 115));
+        jMenu4.setForeground(new java.awt.Color(1, 80, 115));
+        jMenu4.setText("                                                         ");
+        jMenuBar1.add(jMenu4);
+
+        jMenu8.setBackground(new java.awt.Color(1, 80, 115));
+        jMenu8.setText("Language");
+        jMenuBar1.add(jMenu8);
+
+        jMenu1.setBackground(new java.awt.Color(1, 80, 115));
+        jMenu1.setText("    Cart");
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Caca");
+        jMenu2.setBackground(new java.awt.Color(1, 80, 115));
+        jMenu2.setText("          Login");
         jMenuBar1.add(jMenu2);
+
+        jMenu9.setText("            Help");
+        jMenuBar1.add(jMenu9);
 
         setJMenuBar(jMenuBar1);
 
@@ -181,20 +217,16 @@ public class SignupPage extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(252, Short.MAX_VALUE)
+                .addGap(180, 180, 180)
                 .addComponent(loginButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton3)
-                .addContainerGap(236, Short.MAX_VALUE))
+                .addGap(205, 205, 205))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(91, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(birthYearBox, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(229, 229, 229))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,12 +235,12 @@ public class SignupPage extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jCheckBox4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jCheckBox1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(termsCheckBox, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jCheckBox2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(rePasswordTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(emailTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(passwordTextField, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(firstNameTextField, javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,9 +248,10 @@ public class SignupPage extends javax.swing.JFrame {
                                 .addComponent(lastNameTextField, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(usernameTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(passwordTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 608, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(genderBox, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(emailTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 608, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(genderBox, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(birthYearBox, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(101, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(signupButton)
@@ -227,11 +260,11 @@ public class SignupPage extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(loginButton)
-                    .addComponent(jButton3))
-                .addGap(60, 60, 60)
+                    .addComponent(jButton3)
+                    .addComponent(loginButton))
+                .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(firstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -246,11 +279,11 @@ public class SignupPage extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(passwordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(passwordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -268,7 +301,7 @@ public class SignupPage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(genderBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49)
-                .addComponent(jCheckBox1)
+                .addComponent(termsCheckBox)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jCheckBox2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -282,7 +315,7 @@ public class SignupPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        new LoginPage().setVisible(true);
+        new LoginPage(database).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_loginButtonActionPerformed
 
@@ -290,37 +323,51 @@ public class SignupPage extends javax.swing.JFrame {
         String username=usernameTextField.getText();
         String email=emailTextField.getText();
         String password=passwordTextField.getText();
+        String rePassword=rePasswordTextField.getText();
         String firstName=firstNameTextField.getText();
         String lastName=lastNameTextField.getText();
         String birthYear=(String) birthYearBox.getSelectedItem();
         String location=(String) locationBox.getSelectedItem();
         String gender=(String) genderBox.getSelectedItem();
-        database.addUser(firstName, lastName, username, email, password, birthYear, location, gender);
+        if (username.equals("") || email.equals("") || password.equals("") || firstName.equals("") || lastName.equals("") || rePassword.equals("") || 
+            username.equals("Type Here") || email.equals("Type Here") || password.equals("Type Here") || firstName.equals("Type Here") || lastName.equals("Type Here") 
+                || rePassword.equals("Type Here") || !(termsCheckBox.isSelected())){
+            JOptionPane.showMessageDialog(null, "Complete all data");
+        }
+        else{
+            if (rePassword.equals(password)){
+                database.addUser(firstName, lastName, username, email, password, birthYear, location, gender);
+                JOptionPane.showMessageDialog(null, "User added successfuly!");
+                new LoginPage(database).setVisible(true);
+                this.setVisible(false);
+            }
+            else JOptionPane.showMessageDialog(null, "Passwords don't match!");
+        }
     }//GEN-LAST:event_signupButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void firstNameTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_firstNameTextFieldMouseClicked
+        if (firstNameTextField.getText().equals("Type Here")) firstNameTextField.setText("");
+    }//GEN-LAST:event_firstNameTextFieldMouseClicked
 
-    private void locationBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_locationBoxActionPerformed
+    private void lastNameTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lastNameTextFieldMouseClicked
+        if (lastNameTextField.getText().equals("Type Here")) lastNameTextField.setText("");
+    }//GEN-LAST:event_lastNameTextFieldMouseClicked
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    private void usernameTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameTextFieldMouseClicked
+        if (usernameTextField.getText().equals("Type Here")) usernameTextField.setText("");
+    }//GEN-LAST:event_usernameTextFieldMouseClicked
 
-    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox4ActionPerformed
+    private void emailTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emailTextFieldMouseClicked
+        if (emailTextField.getText().equals("Type Here")) emailTextField.setText("");
+    }//GEN-LAST:event_emailTextFieldMouseClicked
 
-    private void firstNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_firstNameTextFieldActionPerformed
+    private void passwordTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passwordTextFieldMouseClicked
+        if (passwordTextField.getText().equals("Type Here")) passwordTextField.setText("");
+    }//GEN-LAST:event_passwordTextFieldMouseClicked
 
-    private void lastNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lastNameTextFieldActionPerformed
+    private void rePasswordTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rePasswordTextFieldMouseClicked
+        if (rePasswordTextField.getText().equals("Type Here")) rePasswordTextField.setText("");
+    }//GEN-LAST:event_rePasswordTextFieldMouseClicked
 
     /**
      * @param args the command line arguments
@@ -363,7 +410,6 @@ public class SignupPage extends javax.swing.JFrame {
     private javax.swing.JTextField firstNameTextField;
     private javax.swing.JComboBox<String> genderBox;
     private javax.swing.JButton jButton3;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JLabel jLabel1;
@@ -377,6 +423,12 @@ public class SignupPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JTextField lastNameTextField;
     private javax.swing.JComboBox<String> locationBox;
@@ -384,6 +436,7 @@ public class SignupPage extends javax.swing.JFrame {
     private javax.swing.JTextField passwordTextField;
     private javax.swing.JTextField rePasswordTextField;
     private javax.swing.JButton signupButton;
+    private javax.swing.JCheckBox termsCheckBox;
     private javax.swing.JTextField usernameTextField;
     // End of variables declaration//GEN-END:variables
 }

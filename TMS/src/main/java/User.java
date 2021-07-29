@@ -1,5 +1,8 @@
 
-public class User {
+import java.io.Serializable;
+
+
+public class User implements Serializable {
     private String firstName;
     private String lastName;
     private String username;
@@ -24,8 +27,18 @@ public class User {
     public String toString() {
         return "User{" + "firstName=" + firstName + ", lastName=" + lastName + ", username=" + username + ", email=" + email + ", password=" + password + ", birthYear=" + birthYear + ", location=" + location + ", gender=" + gender + '}';
     }
-    
-    
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
     
     
 }

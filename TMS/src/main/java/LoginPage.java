@@ -1,3 +1,7 @@
+
+import java.util.List;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,8 +14,9 @@
  */
 public class LoginPage extends javax.swing.JFrame {
 
-    Database database=new Database();
-    public LoginPage() {
+    static Database database=new Database();
+    public LoginPage(Database database) {
+        this.database=database;
         initComponents();
     }
 
@@ -24,53 +29,99 @@ public class LoginPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        loginButton = new javax.swing.JButton();
+        signUpButton = new javax.swing.JButton();
+        usernameTextField = new javax.swing.JTextField();
+        passwordTextField = new javax.swing.JTextField();
+        submitButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        principalMenu = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
+        jMenu9 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setBackground(new java.awt.Color(1, 80, 115));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(216, 250, 173));
-        jButton1.setText("LOGIN");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginButtonAction(evt);
-            }
-        });
+        loginButton.setBackground(new java.awt.Color(1, 80, 115));
+        loginButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        loginButton.setForeground(new java.awt.Color(216, 250, 173));
+        loginButton.setText("Login");
+        loginButton.setToolTipText("");
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton2.setText("Sign up");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        signUpButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        signUpButton.setText("Sign up");
+        signUpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 signupButtonAction(evt);
             }
         });
 
-        jTextField1.setText("Type here");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+        usernameTextField.setText("Type Here");
+        usernameTextField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                usernameTextFieldMouseClicked(evt);
             }
         });
 
-        jTextField2.setText("Type here");
+        passwordTextField.setText("Type Here");
+        passwordTextField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                passwordTextFieldMouseClicked(evt);
+            }
+        });
 
-        jButton3.setBackground(new java.awt.Color(1, 80, 115));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(216, 250, 173));
-        jButton3.setText("Submit");
+        submitButton.setBackground(new java.awt.Color(1, 80, 115));
+        submitButton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        submitButton.setForeground(new java.awt.Color(216, 250, 173));
+        submitButton.setText("Submit");
+        submitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitButtonActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Username/Email");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Password");
+
+        principalMenu.setText("PRINCIPAL");
+        principalMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                principalMenuMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(principalMenu);
+
+        jMenu2.setText("        Categories");
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("        Subscription");
+        jMenuBar1.add(jMenu3);
+
+        jMenu4.setText("                                             ");
+        jMenuBar1.add(jMenu4);
+
+        jMenu5.setText("                 Language");
+        jMenuBar1.add(jMenu5);
+
+        jMenu6.setText("      Cart");
+        jMenuBar1.add(jMenu6);
+
+        jMenu8.setText("     Sign Up");
+        jMenuBar1.add(jMenu8);
+
+        jMenu9.setText("       Help");
+        jMenuBar1.add(jMenu9);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,13 +133,13 @@ public class LoginPage extends javax.swing.JFrame {
                         .addContainerGap(199, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(122, 122, 122)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(signUpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(24, 24, 24))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField1)
-                                .addComponent(jTextField2)
+                                .addComponent(usernameTextField)
+                                .addComponent(passwordTextField)
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel2)
@@ -96,7 +147,7 @@ public class LoginPage extends javax.swing.JFrame {
                                     .addGap(231, 231, 231)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(345, 345, 345)
-                        .addComponent(jButton3)))
+                        .addComponent(submitButton)))
                 .addGap(219, 219, 219))
         );
         layout.setVerticalGroup(
@@ -104,37 +155,69 @@ public class LoginPage extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(114, 114, 114)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(signUpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(72, 72, 72)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(usernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addGap(2, 2, 2)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(passwordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(96, 96, 96)
-                .addComponent(jButton3)
-                .addContainerGap(150, Short.MAX_VALUE))
+                .addComponent(submitButton)
+                .addContainerGap(128, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void signupButtonAction(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupButtonAction
         new SignupPage(database).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_signupButtonAction
 
-    private void loginButtonAction(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonAction
-        
-    }//GEN-LAST:event_loginButtonAction
+    private void usernameTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameTextFieldMouseClicked
+        if (usernameTextField.getText().equals("Type Here")) usernameTextField.setText("");
+    }//GEN-LAST:event_usernameTextFieldMouseClicked
 
+    private void passwordTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passwordTextFieldMouseClicked
+        if (passwordTextField.getText().equals("Type Here")) passwordTextField.setText("");
+    }//GEN-LAST:event_passwordTextFieldMouseClicked
+
+    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
+        String username=usernameTextField.getText();
+        String email=usernameTextField.getText();
+        String password=passwordTextField.getText();
+        List<User> userList=database.getList();
+        boolean sem=false;
+        if (username.equals("") || password.equals("") || username.equals("Type Here") || password.equals("Type Here")) JOptionPane.showMessageDialog(null, "Complete all data");
+        else
+            for (User u: userList){
+                if ((email.equals("tantrares@yahoo.com") || username.equals("Rares12"))&& password.equals("1234")) {
+                    new AdminDashboard(database).setVisible(true);
+                    sem=true;
+                    this.setVisible(false);
+                }
+                else{
+                    if ((u.getEmail().equals(email) || u.getUsername().equals(username)) && u.getPassword().equals(password) ){
+                        JOptionPane.showMessageDialog(null, "You are now logged in on the home page");
+                        sem=true;
+                    }
+                }
+            }
+        if (sem==false) JOptionPane.showMessageDialog(null, "Invalid credentials");
+    }//GEN-LAST:event_submitButtonActionPerformed
+
+    private void principalMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_principalMenuMouseClicked
+        JOptionPane.showMessageDialog(null, "You are now on the home page");
+    }//GEN-LAST:event_principalMenuMouseClicked
+
+    public void setDatabase(Database database) {
+        this.database = database;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -166,18 +249,27 @@ public class LoginPage extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginPage().setVisible(true);
+                new LoginPage(database).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JButton loginButton;
+    private javax.swing.JTextField passwordTextField;
+    private javax.swing.JMenu principalMenu;
+    private javax.swing.JButton signUpButton;
+    private javax.swing.JButton submitButton;
+    private javax.swing.JTextField usernameTextField;
     // End of variables declaration//GEN-END:variables
 }
