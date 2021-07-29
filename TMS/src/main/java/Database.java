@@ -11,6 +11,7 @@ public class Database {
     
     public void addUser(String username, String email, String password, String firstName, String lastName, String birthYear, String location, String gender){
         User user=new User(firstName, lastName, username, email, password, birthYear, location, gender);
+        System.out.println(user.toString());
         userList.add(user);
     }
 }

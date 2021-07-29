@@ -19,7 +19,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Edit"/>
+            <Property name="text" type="java.lang.String" value="Caca"/>
           </Properties>
         </Menu>
       </SubComponents>
@@ -63,9 +63,17 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jComboBox2" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel8" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="birthYearBox" min="-2" pref="56" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="229" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="locationBox" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
@@ -73,7 +81,6 @@
                               <Component id="jCheckBox1" alignment="0" max="32767" attributes="0"/>
                               <Component id="jCheckBox2" alignment="0" max="32767" attributes="0"/>
                               <Component id="jLabel9" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabel8" alignment="0" max="32767" attributes="0"/>
                               <Component id="jLabel7" alignment="0" max="32767" attributes="0"/>
                               <Component id="rePasswordTextField" alignment="0" max="32767" attributes="0"/>
                               <Component id="emailTextField" alignment="0" max="32767" attributes="0"/>
@@ -86,14 +93,16 @@
                               <Component id="usernameTextField" alignment="0" max="32767" attributes="0"/>
                               <Component id="passwordTextField" alignment="0" min="-2" pref="608" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="genderBox" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="signupButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="330" max="-2" attributes="0"/>
-                  </Group>
               </Group>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="signupButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="318" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -132,24 +141,24 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+              <Component id="birthYearBox" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jComboBox2" min="-2" max="-2" attributes="0"/>
+              <Component id="locationBox" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jComboBox3" min="-2" max="-2" attributes="0"/>
+              <Component id="genderBox" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
               <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jCheckBox4" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Component id="signupButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="76" max="32767" attributes="0"/>
+              <EmptySpace pref="87" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -299,14 +308,57 @@
         <Property name="text" type="java.lang.String" value="Type Here"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox1">
+    <Component class="javax.swing.JComboBox" name="birthYearBox">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="47">
+            <StringItem index="0" value="2010"/>
+            <StringItem index="1" value="2009"/>
+            <StringItem index="2" value="2008"/>
+            <StringItem index="3" value="2007"/>
+            <StringItem index="4" value="2006"/>
+            <StringItem index="5" value="2005"/>
+            <StringItem index="6" value="2004"/>
+            <StringItem index="7" value="2003"/>
+            <StringItem index="8" value="2002"/>
+            <StringItem index="9" value="2001"/>
+            <StringItem index="10" value="2000"/>
+            <StringItem index="11" value="1999"/>
+            <StringItem index="12" value="1998"/>
+            <StringItem index="13" value="1997"/>
+            <StringItem index="14" value="1996"/>
+            <StringItem index="15" value="1995"/>
+            <StringItem index="16" value="1994"/>
+            <StringItem index="17" value="1993"/>
+            <StringItem index="18" value="1992"/>
+            <StringItem index="19" value="1991"/>
+            <StringItem index="20" value="1990"/>
+            <StringItem index="21" value="1989"/>
+            <StringItem index="22" value="1988"/>
+            <StringItem index="23" value="1987"/>
+            <StringItem index="24" value="1986"/>
+            <StringItem index="25" value="1985"/>
+            <StringItem index="26" value="1984"/>
+            <StringItem index="27" value="1983"/>
+            <StringItem index="28" value="1982"/>
+            <StringItem index="29" value="1981"/>
+            <StringItem index="30" value="1980"/>
+            <StringItem index="31" value="1979"/>
+            <StringItem index="32" value="1978"/>
+            <StringItem index="33" value="1977"/>
+            <StringItem index="34" value="1976"/>
+            <StringItem index="35" value="1975"/>
+            <StringItem index="36" value="1974"/>
+            <StringItem index="37" value="1973"/>
+            <StringItem index="38" value="1972"/>
+            <StringItem index="39" value="1971"/>
+            <StringItem index="40" value="1970"/>
+            <StringItem index="41" value="1969"/>
+            <StringItem index="42" value="1968"/>
+            <StringItem index="43" value="1967"/>
+            <StringItem index="44" value="1966"/>
+            <StringItem index="45" value="1965"/>
+            <StringItem index="46" value="1964"/>
           </StringArray>
         </Property>
       </Properties>
@@ -338,32 +390,31 @@
         <Property name="text" type="java.lang.String" value="Gender"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox2">
+    <Component class="javax.swing.JComboBox" name="locationBox">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="5">
+            <StringItem index="0" value="Brasov"/>
+            <StringItem index="1" value="Bucuresti"/>
+            <StringItem index="2" value="Cluj-Napoca"/>
+            <StringItem index="3" value="Sibiu"/>
+            <StringItem index="4" value="Targu-Mures"/>
           </StringArray>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="locationBoxActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox3">
+    <Component class="javax.swing.JComboBox" name="genderBox">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="2">
+            <StringItem index="0" value="Masculin"/>
+            <StringItem index="1" value="Feminin"/>
           </StringArray>
         </Property>
       </Properties>
