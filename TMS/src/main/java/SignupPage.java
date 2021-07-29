@@ -10,7 +10,7 @@
  */
 public class SignupPage extends javax.swing.JFrame {
 
-    Database database;
+    static Database database;
     public SignupPage(Database database) {
         this.database=database;
         initComponents();
@@ -152,7 +152,7 @@ public class SignupPage extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SignupPage().setVisible(true);
+                new SignupPage(database).setVisible(true);
             }
         });
     }
